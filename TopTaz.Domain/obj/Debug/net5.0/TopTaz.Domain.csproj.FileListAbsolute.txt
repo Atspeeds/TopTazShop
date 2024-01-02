@@ -1,0 +1,12 @@
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\bin\Debug\net5.0\TopTaz.Domain.deps.json
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\bin\Debug\net5.0\TopTaz.Domain.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\bin\Debug\net5.0\TopTaz.Domain.pdb
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\TopTaz.Domain.csproj.AssemblyReference.cache
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\TopTaz.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\TopTaz.Domain.AssemblyInfoInputs.cache
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\TopTaz.Domain.AssemblyInfo.cs
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\TopTaz.Domain.csproj.CoreCompileInputs.cache
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\TopTaz.Domain.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\refint\TopTaz.Domain.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\TopTaz.Domain.pdb
+C:\Users\A\source\repos\TopTazShop\TopTaz.Domain\obj\Debug\net5.0\ref\TopTaz.Domain.dll
