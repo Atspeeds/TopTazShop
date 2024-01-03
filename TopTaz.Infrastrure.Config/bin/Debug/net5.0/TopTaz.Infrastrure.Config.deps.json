@@ -1049,11 +1049,21 @@
           "TopTaz.Domain.dll": {}
         }
       },
+      "TopTaz.Infrastrure/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "TopTaz.Domain": "1.0.0"
+        },
+        "runtime": {
+          "TopTaz.Infrastrure.dll": {}
+        }
+      },
       "TopTaz.Persistence/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
-          "TopTaz.Application": "1.0.0"
+          "TopTaz.Application": "1.0.0",
+          "TopTaz.Infrastrure": "1.0.0"
         },
         "runtime": {
           "TopTaz.Persistence.dll": {}
@@ -1731,6 +1741,11 @@
       "sha512": ""
     },
     "TopTaz.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TopTaz.Infrastrure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

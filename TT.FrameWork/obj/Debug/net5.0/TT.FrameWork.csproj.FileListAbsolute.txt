@@ -1,0 +1,12 @@
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\bin\Debug\net5.0\TT.FrameWork.deps.json
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\bin\Debug\net5.0\TT.FrameWork.dll
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\bin\Debug\net5.0\TT.FrameWork.pdb
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\TT.FrameWork.csproj.AssemblyReference.cache
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\TT.FrameWork.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\TT.FrameWork.AssemblyInfoInputs.cache
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\TT.FrameWork.AssemblyInfo.cs
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\TT.FrameWork.csproj.CoreCompileInputs.cache
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\TT.FrameWork.dll
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\refint\TT.FrameWork.dll
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\TT.FrameWork.pdb
+C:\Users\A\source\repos\TopTazShop\TT.FrameWork\obj\Debug\net5.0\ref\TT.FrameWork.dll

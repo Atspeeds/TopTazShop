@@ -1,17 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TopTaz.Application.ContextACL;
 using TopTaz.Domain.UserAgg;
+using TopTaz.Infrastrure;
+
 
 namespace TopTaz.Persistence.TTDbContext
 {
     public class TopTazDbContext : DbContext, IDataBaseContext
     {
-        public TopTazDbContext(DbContextOptions<TopTazDbContext> options):base(options)
+        public TopTazDbContext(DbContextOptions<TopTazDbContext> options) : base(options)
         {
         }
 
@@ -20,6 +17,20 @@ namespace TopTaz.Persistence.TTDbContext
         public DbSet<User> Users { get; set; }
         #endregion
 
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.AddAuditableProperties();
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public override int SaveChanges()
+        {
+            var helper = new EntityStateHelper(this);
+            helper.TrackAndModifyEntities();
+            return base.SaveChanges();
+        }
 
 
 

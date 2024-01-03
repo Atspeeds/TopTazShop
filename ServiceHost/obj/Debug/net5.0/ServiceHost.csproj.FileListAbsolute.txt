@@ -80,3 +80,5 @@ C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\ServiceHost.genr
 C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\ref\ServiceHost.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\Humanizer.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\TopTaz.Infrastrure.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\TopTaz.Infrastrure.pdb

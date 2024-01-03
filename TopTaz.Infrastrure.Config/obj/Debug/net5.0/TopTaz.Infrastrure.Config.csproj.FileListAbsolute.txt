@@ -17,3 +17,5 @@ C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure.Config\obj\Debug\net5.0\To
 C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure.Config\obj\Debug\net5.0\refint\TopTaz.Infrastrure.Config.dll
 C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure.Config\obj\Debug\net5.0\TopTaz.Infrastrure.Config.pdb
 C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure.Config\obj\Debug\net5.0\ref\TopTaz.Infrastrure.Config.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure.Config\bin\Debug\net5.0\TopTaz.Infrastrure.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure.Config\bin\Debug\net5.0\TopTaz.Infrastrure.pdb

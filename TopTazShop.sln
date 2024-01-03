@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopTaz.Infrastrure.Config",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TT.Persistence", "TT.Persistence", "{95B22250-7989-4C43-98B8-7B3A65292851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopTaz.Persistence", "TopTaz.Persistence\TopTaz.Persistence.csproj", "{AFE26D00-6F30-4A7A-854F-42B296424A5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopTaz.Persistence", "TopTaz.Persistence\TopTaz.Persistence.csproj", "{AFE26D00-6F30-4A7A-854F-42B296424A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TT.FrameWork", "TT.FrameWork\TT.FrameWork.csproj", "{C8CEB1C1-96AB-470A-96CD-9435FDC7F338}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{AFE26D00-6F30-4A7A-854F-42B296424A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFE26D00-6F30-4A7A-854F-42B296424A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFE26D00-6F30-4A7A-854F-42B296424A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CEB1C1-96AB-470A-96CD-9435FDC7F338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CEB1C1-96AB-470A-96CD-9435FDC7F338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CEB1C1-96AB-470A-96CD-9435FDC7F338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CEB1C1-96AB-470A-96CD-9435FDC7F338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{A38AEC1A-D1D4-4889-8C42-51E69B028E0F} = {ED816FA4-5AC0-4C44-BB20-7222676D7FDC}
 		{95B22250-7989-4C43-98B8-7B3A65292851} = {DCF981D2-2954-4EAE-B1B8-B488F2109C58}
 		{AFE26D00-6F30-4A7A-854F-42B296424A5A} = {95B22250-7989-4C43-98B8-7B3A65292851}
+		{C8CEB1C1-96AB-470A-96CD-9435FDC7F338} = {39DAD0C1-71B3-486D-A3BD-10793D0E0D06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {335C5591-2B28-4902-90AD-C18C4A105BA5}

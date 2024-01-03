@@ -1776,6 +1776,20 @@
           "bin/placeholder/TopTaz.Domain.dll": {}
         }
       },
+      "TopTaz.Infrastrure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "TopTaz.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TopTaz.Infrastrure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TopTaz.Infrastrure.dll": {}
+        }
+      },
       "TopTaz.Infrastrure.Config/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1798,7 +1812,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
-          "TopTaz.Application": "1.0.0"
+          "TopTaz.Application": "1.0.0",
+          "TopTaz.Infrastrure": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TopTaz.Persistence.dll": {}
@@ -6060,6 +6075,11 @@
       "type": "project",
       "path": "../TopTaz.Domain/TopTaz.Domain.csproj",
       "msbuildProject": "../TopTaz.Domain/TopTaz.Domain.csproj"
+    },
+    "TopTaz.Infrastrure/1.0.0": {
+      "type": "project",
+      "path": "../TopTaz.Infrastrure/TopTaz.Infrastrure.csproj",
+      "msbuildProject": "../TopTaz.Infrastrure/TopTaz.Infrastrure.csproj"
     },
     "TopTaz.Infrastrure.Config/1.0.0": {
       "type": "project",

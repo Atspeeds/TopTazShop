@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TopTaz.Application\TopTaz.Application.csproj" />
+    <ProjectReference Include="..\TopTaz.Infrastrure\TopTaz.Infrastrure.csproj" />
   </ItemGroup>
 
 </Project>
