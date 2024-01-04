@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using TopTaz.Domain.FrameWorkDomain;
 
 namespace TopTaz.Infrastrure
@@ -10,7 +11,7 @@ namespace TopTaz.Infrastrure
         {
             foreach (var item in modelBuilder.Model.GetEntityTypes())
             {
-                if (item.ClrType.GetCustomAttributes(typeof(AuditableAttribute), true).Length > 0)
+                if (item.ClrType.GetCustomAttributes(typeof(AuditableAttribute), true).Any())
                 {
                     modelBuilder.Entity(item.Name).Property<DateTime?>("CreatedOn");
                     modelBuilder.Entity(item.Name).Property<DateTime?>("LastModified");

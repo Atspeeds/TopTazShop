@@ -14,14 +14,14 @@ namespace TopTaz.Persistence.TTDbContext
 
 
         #region Data Table
-        public DbSet<User> Users { get; set; }
+  
         #endregion
 
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.AddAuditableProperties();
+           
             base.OnModelCreating(modelBuilder);
         }
 

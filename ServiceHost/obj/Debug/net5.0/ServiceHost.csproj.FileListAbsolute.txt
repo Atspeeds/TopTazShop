@@ -82,3 +82,5 @@ C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\Humanizer.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\TopTaz.Infrastrure.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\TopTaz.Infrastrure.pdb
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
