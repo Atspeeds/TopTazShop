@@ -16,7 +16,8 @@ namespace TopTaz.Infrastrure.Config
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<TopTazIdentityContext>()
                 .AddDefaultTokenProviders()
-                .AddRoles<IdentityRole>();
+                .AddRoles<IdentityRole>()
+                .AddErrorDescriber<CustomIdentityError>();
 
             services.Configure<IdentityOptions>(options =>
             {
