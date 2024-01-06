@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.CodeAnalysis.Operations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,7 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TopTaz.Application.ContextACL;
 using TopTaz.Infrastrure.Config;
+using TopTaz.Persistence.TTDbContext;
 
 namespace ServiceHost
 {
@@ -30,6 +33,8 @@ namespace ServiceHost
             services.AddControllersWithViews();
             TopTazBoostraper.Configuration(services, ConnectionString);
             TopTazIdentityBootstraper.Configuration(services, ConnectionString);
+            services.AddTransient(typeof(IMongoServiceConnection<>), typeof(TopTazMongoDbContext<>));
+
 
             services.AddAuthorization();
 

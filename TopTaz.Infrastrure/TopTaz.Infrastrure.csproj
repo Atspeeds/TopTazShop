@@ -6,9 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.23.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TopTaz.Application\TopTaz.Application.csproj" />
     <ProjectReference Include="..\TopTaz.Domain\TopTaz.Domain.csproj" />
   </ItemGroup>
 

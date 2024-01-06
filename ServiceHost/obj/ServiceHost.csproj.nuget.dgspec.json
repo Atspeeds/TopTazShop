@@ -121,6 +121,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.23.1, )"
             }
           },
           "imports": [
@@ -305,6 +309,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\A\\source\\repos\\TopTazShop\\TopTaz.Application\\TopTaz.Application.csproj": {
+                "projectPath": "C:\\Users\\A\\source\\repos\\TopTazShop\\TopTaz.Application\\TopTaz.Application.csproj"
+              },
               "C:\\Users\\A\\source\\repos\\TopTazShop\\TopTaz.Domain\\TopTaz.Domain.csproj": {
                 "projectPath": "C:\\Users\\A\\source\\repos\\TopTazShop\\TopTaz.Domain\\TopTaz.Domain.csproj"
               }
@@ -324,6 +331,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.23.1, )"
             }
           },
           "imports": [
