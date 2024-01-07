@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ijjuOsUtv+mbsjpxTlRiur/hbbLfFFzNp0v2luUnmeqf8VefMw/s6MjvBhp7CZipD6ul9IrjpIRs0QE4+jZxrw==",
+  "dgSpecHash": "DcuOKTUTNZ8UN0TsHvkvbdyM5qJMgQLatUxRMK8qKTOwJGKuxYxQJb//ed3umW4VMd1WibXU+Re+ihUwkGQGSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\A\\source\\repos\\TopTazShop\\ServiceHost\\ServiceHost.csproj",
   "expectedPackageFiles": [
@@ -163,6 +163,7 @@
     "C:\\Users\\A\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\A\\.nuget\\packages\\uaparser\\3.1.47\\uaparser.3.1.47.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
   "logs": []

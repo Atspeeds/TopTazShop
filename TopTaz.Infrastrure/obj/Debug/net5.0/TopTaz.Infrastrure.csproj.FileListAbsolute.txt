@@ -13,3 +13,5 @@ C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure\obj\Debug\net5.0\ref\TopTa
 C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure\bin\Debug\net5.0\TopTaz.Domain.dll
 C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure\bin\Debug\net5.0\TopTaz.Domain.pdb
 C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure\obj\Debug\net5.0\TopTaz.Infrastrure.csproj.CopyComplete
+C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure\bin\Debug\net5.0\TopTaz.Application.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Infrastrure\bin\Debug\net5.0\TopTaz.Application.pdb

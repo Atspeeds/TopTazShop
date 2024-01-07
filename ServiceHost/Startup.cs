@@ -6,11 +6,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ServiceHost.Controllers;
+using ServiceHost.Utility.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TopTaz.Application.ContextACL;
+using TopTaz.Application.VisitorApplication;
 using TopTaz.Infrastrure.Config;
 using TopTaz.Persistence.TTDbContext;
 
@@ -30,11 +32,16 @@ namespace ServiceHost
         {
             string ConnectionString = Configuration.GetConnectionString("SqlServer");
 
-            services.AddControllersWithViews();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(RegisterVisitFilter));
+            });
+
             TopTazBoostraper.Configuration(services, ConnectionString);
             TopTazIdentityBootstraper.Configuration(services, ConnectionString);
             services.AddTransient(typeof(IMongoServiceConnection<>), typeof(TopTazMongoDbContext<>));
-
+            services.AddTransient<IVisitorApplication, VisitorApplication>();
+           
 
             services.AddAuthorization();
 

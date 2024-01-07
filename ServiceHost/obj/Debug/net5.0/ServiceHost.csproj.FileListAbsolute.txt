@@ -160,3 +160,17 @@ C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\runtimes\win-arm
 C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Account\Profile.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\AWSSDK.Core.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\AWSSDK.SecurityToken.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\DnsClient.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\Snappier.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\UAParser.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\ZstdSharp.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll

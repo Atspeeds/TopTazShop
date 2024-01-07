@@ -8,6 +8,7 @@ namespace TopTaz.Domain.VisitorAgg
 {
     public class Visitor
     {
+        public string ID { get; set; }
         public string Ip { get; set; }
         public string CurrentLink { get; set; }
         public string ReferrerLink { get; set; }
@@ -18,10 +19,11 @@ namespace TopTaz.Domain.VisitorAgg
         public VisitorVersion OperationSystem { get; set; }
         public Device Device { get; set; }
 
-        public Visitor(string ip, string currentLink, string referrerLink, string method, 
+        public Visitor(string Id,string ip, string currentLink, string referrerLink, string method, 
             string protocol, string physicalPath,
             VisitorVersion browser, VisitorVersion operationSystem, Device device)
         {
+            ID = Id;
             Ip = ip;
             CurrentLink = currentLink;
             ReferrerLink = referrerLink;
