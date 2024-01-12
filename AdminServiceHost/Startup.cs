@@ -8,6 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TopTaz.Application.ContextACL;
+using TopTaz.Application.ReportsService.VisitorReports;
+using TopTaz.Persistence.TTDbContext;
 
 namespace AdminServiceHost
 {
@@ -24,6 +27,9 @@ namespace AdminServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddTransient<IVisitorReport, VisitorReport>();
+            services.AddTransient(typeof(IMongoServiceConnection<>), typeof(TopTazMongoDbContext<>));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

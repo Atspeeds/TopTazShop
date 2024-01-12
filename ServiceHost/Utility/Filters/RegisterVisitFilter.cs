@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
+using System.Linq;
 using TopTaz.Application.VisitorApplication;
 using UAParser;
 
@@ -18,11 +19,27 @@ namespace ServiceHost.Utility.Filters
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-           
+
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
+
+            var cookieVisitorId = context.HttpContext.Request.Cookies["VisitorId"];
+            if (string.IsNullOrWhiteSpace(cookieVisitorId))
+            {
+                var guid = Guid.NewGuid();
+                context.HttpContext.Response.Cookies.Append("VisitorId", guid.ToString(),
+                   new CookieOptions
+                   {
+                       Expires = DateTime.Now.AddDays(30),
+                       HttpOnly=true,
+                       Path="/"
+                   });
+
+            }
+
+
             try
             {
                 var ip = context.HttpContext.Connection.RemoteIpAddress.ToString();
@@ -38,7 +55,7 @@ namespace ServiceHost.Utility.Filters
                     var referer = context.HttpContext.Request.Headers["Referer"].ToString();
                     var currentUrl = context.HttpContext.Request.Path;
                     var request = context.HttpContext.Request;
-                    var visitorId = context.HttpContext.Request.Cookies["VisitorId"];
+                    var visitorId = cookieVisitorId;
 
                     var visitDto = CreateVisitDto(ip, actionName, controllerName, clientInfo, referer, currentUrl, request, visitorId);
 
@@ -55,6 +72,7 @@ namespace ServiceHost.Utility.Filters
         {
             return new CreateVisit
             {
+                VisitorId = visitorId,
                 Browser = new VisitorVersionDto
                 {
                     Family = clientInfo.OS.Family,
@@ -74,12 +92,12 @@ namespace ServiceHost.Utility.Filters
                 {
                     Family = clientInfo.UA.Family,
                     Version = $"{clientInfo.UA.Major}.{clientInfo.UA.Minor}.{clientInfo.UA.Patch}"
-             
+
                 },
                 PhysicalPath = $"{controllerName}/{actionName}",
                 Protocol = request.Protocol,
                 ReferrerLink = referer,
-                Id = visitorId,
+                
             };
         }
     }

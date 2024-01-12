@@ -2,7 +2,7 @@
 {
     public class CreateVisit
     {
-        public string Id { get; set; }
+        public string VisitorId { get; set; }
         public string Ip { get; set; }
         public string CurrentLink { get; set; }
         public string ReferrerLink { get; set; }

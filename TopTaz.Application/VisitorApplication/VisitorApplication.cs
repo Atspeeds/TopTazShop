@@ -26,9 +26,9 @@ namespace TopTaz.Application.VisitorApplication
             var device = new Device(command.Device.Brand,command.Device.Family,
                 command.Device.Model,command.Device.IsSpider);
          
-            var visitor = new Visitor(command.Id,command.Ip,command.CurrentLink,command.ReferrerLink,
+            var visitor = new Visitor(command.Ip,command.CurrentLink,command.ReferrerLink,
                 command.Method,command.Protocol,command.PhysicalPath,
-                    Browser,OperationSystem,device);
+                    Browser,OperationSystem,device, command.VisitorId);
 
            var resualt= _collection.InsertOneAsync(visitor);
 
@@ -37,5 +37,6 @@ namespace TopTaz.Application.VisitorApplication
 
             return false;
         }
+
     }
 }

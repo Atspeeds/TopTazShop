@@ -1,5 +1,4 @@
 C:\Users\A\source\repos\TopTazShop\TopTaz.Application\bin\Debug\net5.0\TopTaz.Application.deps.json
-C:\Users\A\source\repos\TopTazShop\TopTaz.Application\bin\Debug\net5.0\TopTaz.Application.dll
 C:\Users\A\source\repos\TopTazShop\TopTaz.Application\bin\Debug\net5.0\TopTaz.Application.pdb
 C:\Users\A\source\repos\TopTazShop\TopTaz.Application\bin\Debug\net5.0\TopTaz.Domain.dll
 C:\Users\A\source\repos\TopTazShop\TopTaz.Application\bin\Debug\net5.0\TopTaz.Domain.pdb
