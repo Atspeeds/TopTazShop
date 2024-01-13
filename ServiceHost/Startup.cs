@@ -1,18 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.CodeAnalysis.Operations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ServiceHost.Controllers;
+using ServiceHost.Hubs;
 using ServiceHost.Utility.Filters;
+using ServiceHost.Utility.Middleware;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TopTaz.Application.ContextACL;
-using TopTaz.Application.VisitorApplication;
+using TopTaz.Application.VisitorApplication.Visitors;
 using TopTaz.Infrastrure.Config;
 using TopTaz.Persistence.TTDbContext;
 
@@ -26,11 +22,12 @@ namespace ServiceHost
         }
 
         public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             string ConnectionString = Configuration.GetConnectionString("SqlServer");
+            services.AddSignalR();
 
             services.AddMvc(options =>
             {
@@ -40,7 +37,7 @@ namespace ServiceHost
             TopTazBoostraper.Configuration(services, ConnectionString);
             TopTazIdentityBootstraper.Configuration(services, ConnectionString);
             services.AddTransient(typeof(IMongoServiceConnection<>), typeof(TopTazMongoDbContext<>));
-            services.AddTransient<IVisitorApplication, VisitorApplication>();
+            
            
 
             services.AddAuthorization();
@@ -70,7 +67,7 @@ namespace ServiceHost
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseVisitorsIdRegistration();
             app.UseRouting();
 
            
@@ -82,6 +79,7 @@ namespace ServiceHost
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<OnlineVisitorHub>("/chathub");
             });
         }
     }

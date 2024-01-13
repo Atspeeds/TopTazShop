@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
-using System.Linq;
-using TopTaz.Application.VisitorApplication;
+using TopTaz.Application.VisitorApplication.Dtos;
+using TopTaz.Application.VisitorApplication.Visitors;
 using UAParser;
 
 namespace ServiceHost.Utility.Filters
@@ -26,20 +26,7 @@ namespace ServiceHost.Utility.Filters
         {
 
             var cookieVisitorId = context.HttpContext.Request.Cookies["VisitorId"];
-            if (string.IsNullOrWhiteSpace(cookieVisitorId))
-            {
-                var guid = Guid.NewGuid();
-                context.HttpContext.Response.Cookies.Append("VisitorId", guid.ToString(),
-                   new CookieOptions
-                   {
-                       Expires = DateTime.Now.AddDays(30),
-                       HttpOnly=true,
-                       Path="/"
-                   });
-
-            }
-
-
+         
             try
             {
                 var ip = context.HttpContext.Connection.RemoteIpAddress.ToString();
@@ -58,8 +45,8 @@ namespace ServiceHost.Utility.Filters
                     var visitorId = cookieVisitorId;
 
                     var visitDto = CreateVisitDto(ip, actionName, controllerName, clientInfo, referer, currentUrl, request, visitorId);
-
                     _visitorApplication.Create(visitDto);
+
                 }
             }
             catch (Exception ex)

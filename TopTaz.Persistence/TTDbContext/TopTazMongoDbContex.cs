@@ -12,7 +12,7 @@ namespace TopTaz.Persistence.TTDbContext
 
         public TopTazMongoDbContext(string defaultConnection = "VisitorDb")
         {
-            var mongoClient = new MongoClient();
+            var mongoClient = new MongoClient();  // You may need to provide connection details here.
             _mongoDatabase = mongoClient.GetDatabase(defaultConnection);
         }
 
@@ -25,7 +25,8 @@ namespace TopTaz.Persistence.TTDbContext
             return _mongoCollection;
         }
 
-        private string GetCollectionName()
+        // TopTaz.Persistence.TTDbContext.TopTazMongoDbContext.cs
+        private static string GetCollectionName()
         {
             return typeof(TEntity).Name;
         }

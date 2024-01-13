@@ -1,4 +1,4 @@
-﻿namespace TopTaz.Application.VisitorApplication
+﻿namespace TopTaz.Application.VisitorApplication.Dtos
 {
     public class VisitorVersionDto
     {
