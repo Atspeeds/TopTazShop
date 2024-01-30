@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TnB20Y6OB51MtBm7EfGnUChDJeewoYnAZBEAwZdv0O+pWQdDGhpbWMKmhqvhr3+v0ZaXJyf+Vaerxdtz6Pl8rQ==",
+  "dgSpecHash": "W+0ZkXiQOBt1JJNvKkaHIV3UV2bNlDnOhjETGIKggYHi20aUGoyDzVGaE72g+NhqDwe36eN1io4JYmngoATLMg==",
   "success": true,
   "projectFilePath": "C:\\Users\\A\\source\\repos\\TopTazShop\\TopTaz.Persistence\\TopTaz.Persistence.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\A\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",

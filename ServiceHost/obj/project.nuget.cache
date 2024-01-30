@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xkfVI6hlgawhm9rh3sAYA9f6AJeJes7s+w6ktaNsuJVj6/56IEJSMWAXK/vjMFvwjXFROcpK8+2r1NGs5+FD1A==",
+  "dgSpecHash": "3yDgF07jApTxowlAeKyOBzCTE75KjrADE3lOGRO404THmEgxhqMYPERpjO0D7ZaNZeEfRWoRbbHpNOU1CdnN5w==",
   "success": true,
   "projectFilePath": "C:\\Users\\A\\source\\repos\\TopTazShop\\ServiceHost\\ServiceHost.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\A\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\A\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.1\\automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",

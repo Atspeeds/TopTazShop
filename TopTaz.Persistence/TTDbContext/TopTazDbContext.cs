@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TopTaz.Application.ContextACL;
-using TopTaz.Domain.UserAgg;
+using TopTaz.Domain.CatalogAgg;
 using TopTaz.Infrastrure;
-
+using TopTaz.Persistence.Mapping.CatalogMap;
 
 namespace TopTaz.Persistence.TTDbContext
 {
@@ -14,14 +14,20 @@ namespace TopTaz.Persistence.TTDbContext
 
 
         #region Data Table
-  
+
+        public DbSet<CatalogBrand>  CatalogBrands { get; set; }
+        public DbSet<CatalogType> CatalogTypes { get; set; }
+
+
         #endregion
 
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+            var assamble = typeof(CatalogBrandMapping).Assembly;
+            modelBuilder.ApplyConfigurationsFromAssembly(assamble);
+
             base.OnModelCreating(modelBuilder);
         }
 

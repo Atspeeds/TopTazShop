@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AWSSDK.Core/3.7.100.14": {
         "type": "package",
         "compile": {
@@ -2046,8 +2062,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AutoMapper": "12.0.1",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "MongoDB.Driver": "2.23.1",
+          "TT.FrameWork": "1.0.0",
           "TopTaz.Domain": "1.0.0"
         },
         "compile": {
@@ -2086,10 +2104,35 @@
         "runtime": {
           "bin/placeholder/TopTaz.Infrastrure.dll": {}
         }
+      },
+      "TT.FrameWork/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/TT.FrameWork.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TT.FrameWork.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "type": "package",
+      "path": "automapper/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.12.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
     "AWSSDK.Core/3.7.100.14": {
       "sha512": "gnEgxBlk4PFEfdPE8Lkf4+D16MZFYSaW7/o6Wwe5e035QWUkTJX0Dn4LfTCdV5QSEL/fOFxu+yCAm55eIIBgog==",
       "type": "package",
@@ -6761,6 +6804,11 @@
       "type": "project",
       "path": "../TopTaz.Infrastrure/TopTaz.Infrastrure.csproj",
       "msbuildProject": "../TopTaz.Infrastrure/TopTaz.Infrastrure.csproj"
+    },
+    "TT.FrameWork/1.0.0": {
+      "type": "project",
+      "path": "../TT.FrameWork/TT.FrameWork.csproj",
+      "msbuildProject": "../TT.FrameWork/TT.FrameWork.csproj"
     }
   },
   "projectFileDependencyGroups": {
