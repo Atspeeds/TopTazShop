@@ -5,11 +5,11 @@ namespace TopTaz.Application.CatalogApplication.CatalogTypes
 {
     public interface ICatalogTypeApplication
     {
-        BaseDto<CreateCatalogType> Create(CreateCatalogType command);
-        BaseDto Remove(long id);
-        BaseDto<EditCatalogType> Edit(EditCatalogType command);
-        BaseDto<CatalogTypeViewModel> Get(long id);
-        PaginatedItemDto<CatalogTypeViewModel> Get(long? parentid, int pageindex, int pagesize);
+        BaseDto<CatalogTypeDto> Add(CatalogTypeDto catalogType);
+        BaseDto Remove(long Id);
+        BaseDto<CatalogTypeDto> Edit(CatalogTypeDto catalogType);
+        BaseDto<CatalogTypeDto> FindById(long Id);
+        PaginatedItemDto<CatalogTypeListDto> GetList(long? parentId, int page, int pageSize);
 
     }
 }

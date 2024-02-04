@@ -1,16 +1,13 @@
+using AdminServiceHost.MappingProfiles;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TopTaz.Application.ContextACL;
-using TopTaz.Application.ReportsService.VisitorReports;
-using TopTaz.Persistence.TTDbContext;
+using TopTaz.Infrastrure.AutoMapProfile;
+using TopTaz.Infrastrure.Config;
 
 namespace AdminServiceHost
 {
@@ -27,8 +24,14 @@ namespace AdminServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddTransient<IVisitorReport, VisitorReport>();
-            services.AddTransient(typeof(IMongoServiceConnection<>), typeof(TopTazMongoDbContext<>));
+
+            string ConnectionString = Configuration.GetConnectionString("SqlServer");
+
+           
+            TopTazAdminBootstraper.Configuration(services, ConnectionString);
+            //mapper
+            services.AddAutoMapper(typeof(CatalogMapProfile));
+            services.AddAutoMapper(typeof(CatalogVMMappingProfile));
 
         }
 

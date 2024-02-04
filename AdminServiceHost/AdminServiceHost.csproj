@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TopTaz.Application\TopTaz.Application.csproj" />
+    <ProjectReference Include="..\TopTaz.Infrastrure.Config\TopTaz.Infrastrure.Config.csproj" />
     <ProjectReference Include="..\TopTaz.Persistence\TopTaz.Persistence.csproj" />
   </ItemGroup>
 

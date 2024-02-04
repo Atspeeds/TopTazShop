@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopTaz.Persistence", "TopTa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TT.FrameWork", "TT.FrameWork\TT.FrameWork.csproj", "{C8CEB1C1-96AB-470A-96CD-9435FDC7F338}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminServiceHost", "AdminServiceHost\AdminServiceHost.csproj", "{E5140F40-AF7B-4FE5-B02F-11BCF660D333}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminServiceHost", "AdminServiceHost\AdminServiceHost.csproj", "{E5140F40-AF7B-4FE5-B02F-11BCF660D333}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

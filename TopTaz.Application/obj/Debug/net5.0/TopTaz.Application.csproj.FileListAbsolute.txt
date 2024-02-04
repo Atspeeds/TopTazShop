@@ -12,3 +12,5 @@ C:\Users\A\source\repos\TopTazShop\TopTaz.Application\obj\Debug\net5.0\TopTaz.Ap
 C:\Users\A\source\repos\TopTazShop\TopTaz.Application\obj\Debug\net5.0\refint\TopTaz.Application.dll
 C:\Users\A\source\repos\TopTazShop\TopTaz.Application\obj\Debug\net5.0\TopTaz.Application.pdb
 C:\Users\A\source\repos\TopTazShop\TopTaz.Application\obj\Debug\net5.0\ref\TopTaz.Application.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Application\bin\Debug\net5.0\TT.FrameWork.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Application\bin\Debug\net5.0\TT.FrameWork.pdb

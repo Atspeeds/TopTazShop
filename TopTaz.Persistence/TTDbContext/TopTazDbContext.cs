@@ -2,6 +2,7 @@
 using TopTaz.Application.ContextACL;
 using TopTaz.Domain.CatalogAgg;
 using TopTaz.Infrastrure;
+using TopTaz.Infrastrure.Seeds;
 using TopTaz.Persistence.Mapping.CatalogMap;
 
 namespace TopTaz.Persistence.TTDbContext
@@ -27,7 +28,7 @@ namespace TopTaz.Persistence.TTDbContext
         {
             var assamble = typeof(CatalogBrandMapping).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assamble);
-
+            DataBaseContextSeed.CatalogSeed(modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
 

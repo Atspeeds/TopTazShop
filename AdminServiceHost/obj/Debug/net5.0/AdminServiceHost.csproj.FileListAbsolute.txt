@@ -92,3 +92,15 @@ C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\TopTaz.Infr
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\TopTaz.Persistence.dll
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\TopTaz.Persistence.pdb
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\TopTaz.Infrastrure.pdb
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\TT.FrameWork.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\TT.FrameWork.pdb
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogType\Index.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\TopTaz.Infrastrure.Config.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\TopTaz.Infrastrure.Config.pdb
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\Humanizer.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogType\Create.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogType\Delete.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogType\Edit.cshtml.g.cs

@@ -26,12 +26,16 @@ namespace TopTaz.Application.DtoModel
     public class BaseDto
     {
         public bool ISsuccess { get; private set; }
-        public List<string> Messages { get; private set; } = new List<string>() { "Ssuccess" };
+        public List<string> Messages { get; private set; } = new List<string>() { ServiceMessage.SuccessfulOperation };
 
         public BaseDto( bool iSsuccess, List<string> messages)
         {
             ISsuccess = iSsuccess;
             Messages = messages;
+        }
+        public BaseDto(bool iSsuccess)
+        {
+            ISsuccess = iSsuccess;
         }
     }
 

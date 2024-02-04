@@ -20,3 +20,5 @@ C:\Users\A\source\repos\TopTazShop\TopTaz.Persistence\obj\Debug\net5.0\TopTaz.Pe
 C:\Users\A\source\repos\TopTazShop\TopTaz.Persistence\obj\Debug\net5.0\ref\TopTaz.Persistence.dll
 C:\Users\A\source\repos\TopTazShop\TopTaz.Persistence\bin\Debug\net5.0\TopTaz.Infrastrure.dll
 C:\Users\A\source\repos\TopTazShop\TopTaz.Persistence\bin\Debug\net5.0\TopTaz.Infrastrure.pdb
+C:\Users\A\source\repos\TopTazShop\TopTaz.Persistence\bin\Debug\net5.0\TT.FrameWork.dll
+C:\Users\A\source\repos\TopTazShop\TopTaz.Persistence\bin\Debug\net5.0\TT.FrameWork.pdb

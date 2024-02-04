@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
-using TopTaz.Application.Dtos;
 using TopTaz.Application.VisitorApplication.Dtos;
 using TopTaz.Application.VisitorApplication.Visitors;
 using UAParser;

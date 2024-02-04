@@ -1,59 +1,73 @@
-﻿using Amazon.Runtime.Internal;
-using AutoMapper;
-using System;
+﻿using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
 using TopTaz.Application.CatalogApplication.Dtos;
 using TopTaz.Application.ContextACL;
 using TopTaz.Application.DtoModel;
+using TopTaz.Domain.CatalogAgg;
+using TT.FrameWork.Application;
 using TT.FrameWork.Messages;
 
 namespace TopTaz.Application.CatalogApplication.CatalogTypes
 {
     public class CatalogTypeApplication : ICatalogTypeApplication
     {
-        private readonly IDataBaseContext _Context;
-        private IMapper _mapper;
+        private readonly IDataBaseContext context;
+        private readonly IMapper mapper;
+
         public CatalogTypeApplication(IDataBaseContext context, IMapper mapper)
         {
-            _Context = context;
-            _mapper = mapper;
+            this.context = context;
+            this.mapper = mapper;
         }
 
-        public BaseDto<CreateCatalogType> Create(CreateCatalogType command)
+        public BaseDto<CatalogTypeDto> Add(CatalogTypeDto catalogType)
         {
-            throw new System.NotImplementedException();
+            var model = mapper.Map<CatalogType>(catalogType);
+            context.CatalogTypes.Add(model);
+            context.SaveChanges();
+            return new BaseDto<CatalogTypeDto>(mapper.Map<CatalogTypeDto>(model), true);
+
         }
 
-        public BaseDto<EditCatalogType> Edit(EditCatalogType command)
+        public BaseDto<CatalogTypeDto> Edit(CatalogTypeDto catalogType)
         {
-            throw new System.NotImplementedException();
+            var model = context.CatalogTypes.SingleOrDefault(p => p.Id == catalogType.Id);
+            mapper.Map(catalogType, model);
+            context.SaveChanges();
+            return new BaseDto<CatalogTypeDto>(mapper.Map<CatalogTypeDto>(model), true);
         }
 
-        public BaseDto<CatalogTypeViewModel> Get(long id)
+        public BaseDto<CatalogTypeDto> FindById(long Id)
         {
-            var catalogType = _Context.CatalogTypes
-                .FirstOrDefault(c => c.Id == id);
-
-           
-
-           var catalogMap= _mapper.Map<CatalogTypeViewModel>(catalogType);
-
-
-            var resualt = new BaseDto<CatalogTypeViewModel>(catalogMap,true);
-
-
-            return resualt;
+            var data = context.CatalogTypes.Find(Id);
+            var result = mapper.Map<CatalogTypeDto>(data);
+            return new BaseDto<CatalogTypeDto>(result, true);
         }
 
-        public PaginatedItemDto<CatalogTypeViewModel> Get(long? parentid, int pageindex, int pagesize)
+        public PaginatedItemDto<CatalogTypeListDto> GetList(long? parentId, int page, int pageSize)
         {
-            throw new System.NotImplementedException();
+            int totalCount = 0;
+            var model = context.CatalogTypes
+                .Where(p => p.ParentCatalogTypeId == parentId)
+                .PagedResult(page, pageSize, out totalCount);
+            
+            
+            
+            var result = mapper.ProjectTo<CatalogTypeListDto>(model).ToList();
+            return new PaginatedItemDto<CatalogTypeListDto>(result,page,totalCount,pageSize);
         }
 
-        public BaseDto Remove(long id)
+        public BaseDto Remove(long Id)
         {
-            throw new System.NotImplementedException();
+            var catalogType = context.CatalogTypes.Find(Id);
+            context.CatalogTypes.Remove(catalogType);
+            context.SaveChanges();
+            return new BaseDto
+            (
+             true,
+             new List<string> { $"ایتم با موفقیت حذف شد" }
+             );
         }
     }
 }

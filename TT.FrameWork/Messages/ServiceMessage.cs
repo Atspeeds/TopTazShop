@@ -5,6 +5,7 @@
 
         public const string SuccessfulOperation = "عملیات با موفقیت انجام شد";
 
+
         public const string EmptyRecord = ".رکوردی با این آیدی پیدا نشد لطفا مجدد تلاش کنید";
 
         public const string IsRequired = "این مقدار نمی تواند خالی باشد";

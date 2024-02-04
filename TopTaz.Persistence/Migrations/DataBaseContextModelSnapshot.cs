@@ -34,6 +34,38 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CatalogBrands");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Brand = "سامسونگ"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            Brand = "شیائومی "
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            Brand = "اپل"
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            Brand = "هوآوی"
+                        },
+                        new
+                        {
+                            Id = 5L,
+                            Brand = "نوکیا "
+                        },
+                        new
+                        {
+                            Id = 6L,
+                            Brand = "ال جی"
+                        });
                 });
 
             modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogType", b =>
@@ -56,6 +88,37 @@ namespace Persistence.Migrations
                     b.HasIndex("ParentCatalogTypeId");
 
                     b.ToTable("CatalogTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Type = "کالای دیجیتال"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            ParentCatalogTypeId = 1L,
+                            Type = "لوازم جانبی گوشی"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            ParentCatalogTypeId = 2L,
+                            Type = "پایه نگهدارنده گوشی"
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            ParentCatalogTypeId = 2L,
+                            Type = "پاور بانک (شارژر همراه)"
+                        },
+                        new
+                        {
+                            Id = 5L,
+                            ParentCatalogTypeId = 2L,
+                            Type = "کیف و کاور گوشی"
+                        });
                 });
 
             modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogType", b =>
