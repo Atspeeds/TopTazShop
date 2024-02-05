@@ -7,6 +7,8 @@ using TopTaz.Application.VisitorApplication.Visitors;
 using AutoMapper;
 using TopTaz.Infrastrure.AutoMapProfile;
 using TopTaz.Application.CatalogApplication.CatalogTypes;
+using TopTaz.Application.CatalogApplication.CatalogQuery;
+using TopTaz.Application.ContextACL;
 
 namespace TopTaz.Infrastrure.Config
 {
@@ -17,8 +19,9 @@ namespace TopTaz.Infrastrure.Config
             services.AddTransient<IVisitorOnlineApplication, VisitorOnlineApplication>();
             services.AddTransient<IVisitorApplication, VisitorApplication>();
 
+            services.AddTransient<ICatalogTypeQuery, CatalogTypeQuery>();
+            services.AddTransient<IDataBaseContext, TopTazDbContext>();
 
-            
             #region AutoMapperProfile
             services.AddAutoMapper(typeof(CatalogMapProfile));
             #endregion

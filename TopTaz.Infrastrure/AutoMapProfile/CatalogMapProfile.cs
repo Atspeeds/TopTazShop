@@ -16,6 +16,15 @@ namespace TopTaz.Infrastrure.AutoMapProfile
                 .ForMember(dest => dest.SubTypeCount, option =>
                  option.MapFrom(src => src.ChildCatalogType.Count));
 
+
+            CreateMap<CatalogType, MenoItemDto>()
+               .ForMember(dest => dest.Name, opt =>
+                opt.MapFrom(src => src.Type))
+               .ForMember(dest => dest.ParentId, opt =>
+                opt.MapFrom(src => src.ParentCatalogTypeId))
+               .ForMember(dest => dest.SubMenue, opt =>
+               opt.MapFrom(src => src.ChildCatalogType));
+
         }
 
     }
