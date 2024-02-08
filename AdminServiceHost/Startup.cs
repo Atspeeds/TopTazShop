@@ -1,11 +1,13 @@
 using AdminServiceHost.MappingProfiles;
 using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TopTaz.Application.CatalogApplication.Dtos;
 using TopTaz.Infrastrure.AutoMapProfile;
 using TopTaz.Infrastrure.Config;
 
@@ -33,6 +35,8 @@ namespace AdminServiceHost
             services.AddAutoMapper(typeof(CatalogMapProfile));
             services.AddAutoMapper(typeof(CatalogVMMappingProfile));
 
+            //fluentValidation
+            services.AddTransient<IValidator<CatalogItemDto>, AddNewCatalogItemDtoValidator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -68,6 +68,92 @@ namespace Persistence.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItem", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("AvailableStock")
+                        .HasColumnType("int");
+
+                    b.Property<long>("CatalogBrandId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("CatalogTypeId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaxStockThreshold")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RestockThreshold")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CatalogBrandId");
+
+                    b.HasIndex("CatalogTypeId");
+
+                    b.ToTable("CatalogItems");
+                });
+
+            modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItemFeature", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<long>("CatalogItemId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CatalogItemId");
+
+                    b.ToTable("CatalogItemFeature");
+                });
+
+            modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItemImage", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<long>("CatalogItemId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Src")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CatalogItemId");
+
+                    b.ToTable("CatalogItemImage");
+                });
+
             modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogType", b =>
                 {
                     b.Property<long>("Id")
@@ -121,6 +207,47 @@ namespace Persistence.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItem", b =>
+                {
+                    b.HasOne("TopTaz.Domain.CatalogAgg.CatalogBrand", "CatalogBrand")
+                        .WithMany()
+                        .HasForeignKey("CatalogBrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TopTaz.Domain.CatalogAgg.CatalogType", "CatalogType")
+                        .WithMany()
+                        .HasForeignKey("CatalogTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CatalogBrand");
+
+                    b.Navigation("CatalogType");
+                });
+
+            modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItemFeature", b =>
+                {
+                    b.HasOne("TopTaz.Domain.CatalogAgg.CatalogItem", "CatalogItem")
+                        .WithMany("catalogItemFeatures")
+                        .HasForeignKey("CatalogItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CatalogItem");
+                });
+
+            modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItemImage", b =>
+                {
+                    b.HasOne("TopTaz.Domain.CatalogAgg.CatalogItem", "CatalogItem")
+                        .WithMany("CatalogItemImages")
+                        .HasForeignKey("CatalogItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CatalogItem");
+                });
+
             modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogType", b =>
                 {
                     b.HasOne("TopTaz.Domain.CatalogAgg.CatalogType", "ParentCatalogType")
@@ -128,6 +255,13 @@ namespace Persistence.Migrations
                         .HasForeignKey("ParentCatalogTypeId");
 
                     b.Navigation("ParentCatalogType");
+                });
+
+            modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItem", b =>
+                {
+                    b.Navigation("catalogItemFeatures");
+
+                    b.Navigation("CatalogItemImages");
                 });
 
             modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogType", b =>

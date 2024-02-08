@@ -1,12 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using TopTaz.Persistence.TTDbContext;
-using TopTaz.Application.ReportsService.VisitorReports;
 using TopTaz.Application.VisitorApplication.VisitorOnline;
 using TopTaz.Application.VisitorApplication.Visitors;
 using AutoMapper;
 using TopTaz.Infrastrure.AutoMapProfile;
-using TopTaz.Application.CatalogApplication.CatalogTypes;
 using TopTaz.Application.CatalogApplication.CatalogQuery;
 using TopTaz.Application.ContextACL;
 

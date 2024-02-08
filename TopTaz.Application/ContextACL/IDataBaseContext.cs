@@ -8,6 +8,7 @@ namespace TopTaz.Application.ContextACL
 {
     public interface IDataBaseContext
     {
+        public DbSet<CatalogItem> CatalogItems { get; set; }
         public DbSet<CatalogBrand> CatalogBrands { get; set; }
         public DbSet<CatalogType> CatalogTypes { get; set; }
         int SaveChanges();

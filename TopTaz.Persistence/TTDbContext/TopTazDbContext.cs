@@ -18,7 +18,7 @@ namespace TopTaz.Persistence.TTDbContext
 
         public DbSet<CatalogBrand>  CatalogBrands { get; set; }
         public DbSet<CatalogType> CatalogTypes { get; set; }
-
+        public DbSet<CatalogItem> CatalogItems { get; set; }
 
         #endregion
 

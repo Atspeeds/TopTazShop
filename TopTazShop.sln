@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TT.FrameWork", "TT.FrameWor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminServiceHost", "AdminServiceHost\AdminServiceHost.csproj", "{E5140F40-AF7B-4FE5-B02F-11BCF660D333}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFile.EndPoint", "StaticFile.EndPoint\StaticFile.EndPoint.csproj", "{DD981060-9D5C-4D2E-9ADB-621ACBDDE145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{E5140F40-AF7B-4FE5-B02F-11BCF660D333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5140F40-AF7B-4FE5-B02F-11BCF660D333}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5140F40-AF7B-4FE5-B02F-11BCF660D333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD981060-9D5C-4D2E-9ADB-621ACBDDE145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD981060-9D5C-4D2E-9ADB-621ACBDDE145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD981060-9D5C-4D2E-9ADB-621ACBDDE145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD981060-9D5C-4D2E-9ADB-621ACBDDE145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{AFE26D00-6F30-4A7A-854F-42B296424A5A} = {95B22250-7989-4C43-98B8-7B3A65292851}
 		{C8CEB1C1-96AB-470A-96CD-9435FDC7F338} = {39DAD0C1-71B3-486D-A3BD-10793D0E0D06}
 		{E5140F40-AF7B-4FE5-B02F-11BCF660D333} = {718D4AD3-497C-4176-888F-D1064105F7F2}
+		{DD981060-9D5C-4D2E-9ADB-621ACBDDE145} = {718D4AD3-497C-4176-888F-D1064105F7F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {335C5591-2B28-4902-90AD-C18C4A105BA5}

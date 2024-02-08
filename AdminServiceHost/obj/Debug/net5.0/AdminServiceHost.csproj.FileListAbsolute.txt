@@ -104,3 +104,11 @@ C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\Microsoft.E
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogType\Create.cshtml.g.cs
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogType\Delete.cshtml.g.cs
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogType\Edit.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\RestSharp.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\System.Text.Encodings.Web.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\System.Text.Json.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogItem\Create.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogItem\Index.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\FluentValidation.dll

@@ -25,6 +25,18 @@ namespace TopTaz.Infrastrure.AutoMapProfile
                .ForMember(dest => dest.SubMenue, opt =>
                opt.MapFrom(src => src.ChildCatalogType));
 
+            CreateMap<CatalogItemFeature, CatalogItemFeatureDto>().ReverseMap();
+            CreateMap<CatalogItemImage, CatalogItemImageDto>().ReverseMap();
+
+            CreateMap<CatalogItem, CatalogItemDto>()
+               .ForMember(dest => dest.Features, opt =>
+               opt.MapFrom(src => src.catalogItemFeatures))
+                .ForMember(dest => dest.Images, opt =>
+                opt.MapFrom(src => src.CatalogItemImages)).ReverseMap();
+
+            CreateMap<CatalogBrand, CatalogBrandDto>().ReverseMap();
+            CreateMap<CatalogType, CatalogTypeDto>().ReverseMap();
+
         }
 
     }
