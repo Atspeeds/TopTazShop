@@ -608,5 +608,53 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2024\2024-2\03fafd9c-6577-4ec3-b2de-d7a309b5cad4windows-11-3840x2160-microsoft-8k-4k-24972.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f033.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile.EndPoint</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile.EndPoint</BasePath>
+      <RelativePath>Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f033.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f033.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f034.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile.EndPoint</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile.EndPoint</BasePath>
+      <RelativePath>Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f034.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f034.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f035.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile.EndPoint</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile.EndPoint</BasePath>
+      <RelativePath>Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f035.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2024\2024-2\b40b41dd-08cd-40f0-8ba2-1cccf540723f035.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

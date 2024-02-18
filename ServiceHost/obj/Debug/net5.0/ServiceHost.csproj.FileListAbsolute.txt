@@ -184,3 +184,5 @@ C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\RestSharp.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\System.Text.Encodings.Web.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\System.Text.Json.dll
+C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs

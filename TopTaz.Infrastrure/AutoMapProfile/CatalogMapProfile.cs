@@ -1,11 +1,16 @@
 ﻿using AutoMapper;
+using System.Linq;
+using TopTaz.Application.CatalogApplication.Proxy;
 using TopTaz.Application.CatalogApplication.Dtos;
+using TopTaz.Application.ViewModel;
 using TopTaz.Domain.CatalogAgg;
 
 namespace TopTaz.Infrastrure.AutoMapProfile
 {
     public class CatalogMapProfile : Profile
     {
+        
+
         public CatalogMapProfile()
         {
 
@@ -36,6 +41,15 @@ namespace TopTaz.Infrastrure.AutoMapProfile
 
             CreateMap<CatalogBrand, CatalogBrandDto>().ReverseMap();
             CreateMap<CatalogType, CatalogTypeDto>().ReverseMap();
+
+
+            CreateMap<CatalogItem, CatalogItemsListDto>()
+                .ForMember(dest => dest.Brand, opt =>
+                opt.MapFrom(src => src.CatalogBrand.Brand))
+                .ForMember(dest => dest.Type, opt =>
+                opt.MapFrom(src => src.CatalogType.Type)).ReverseMap();
+
+           
 
         }
 

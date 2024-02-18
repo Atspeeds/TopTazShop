@@ -255,7 +255,7 @@
 
             var ajaxRequest = $.ajax({
                 type: "POST",
-                url: "/catalogitems/create",
+                url: "/Catalogs/CatalogItem/create",
                 contentType: false,
                 processData: false,
                 data: data,
@@ -267,7 +267,7 @@
                             'کاتالوگ با موفقیت ثبت شد',
                             'success'
                         ).then(function (isConfirm) {
-                            window.location.href = "/catalogitems";
+                            window.location.href = "/CatalogItem";
                         });
                     }
                     else {

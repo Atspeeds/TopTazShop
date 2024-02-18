@@ -19,6 +19,55 @@ namespace Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("TopTaz.Domain.BasketAgg.Basket", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("BuyerId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Baskets");
+                });
+
+            modelBuilder.Entity("TopTaz.Domain.BasketAgg.BasketItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("BasketId1")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("CatalogItemId")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("CatalogItemId1")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UnitPrice")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasketId1");
+
+                    b.HasIndex("CatalogItemId1");
+
+                    b.ToTable("BasketItems");
+                });
+
             modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogBrand", b =>
                 {
                     b.Property<long>("Id")
@@ -207,6 +256,19 @@ namespace Persistence.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TopTaz.Domain.BasketAgg.BasketItem", b =>
+                {
+                    b.HasOne("TopTaz.Domain.BasketAgg.Basket", null)
+                        .WithMany("Items")
+                        .HasForeignKey("BasketId1");
+
+                    b.HasOne("TopTaz.Domain.CatalogAgg.CatalogItem", "CatalogItem")
+                        .WithMany()
+                        .HasForeignKey("CatalogItemId1");
+
+                    b.Navigation("CatalogItem");
+                });
+
             modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItem", b =>
                 {
                     b.HasOne("TopTaz.Domain.CatalogAgg.CatalogBrand", "CatalogBrand")
@@ -255,6 +317,11 @@ namespace Persistence.Migrations
                         .HasForeignKey("ParentCatalogTypeId");
 
                     b.Navigation("ParentCatalogType");
+                });
+
+            modelBuilder.Entity("TopTaz.Domain.BasketAgg.Basket", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("TopTaz.Domain.CatalogAgg.CatalogItem", b =>

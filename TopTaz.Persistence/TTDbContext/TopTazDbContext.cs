@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TopTaz.Application.ContextACL;
+using TopTaz.Domain.BasketAgg;
 using TopTaz.Domain.CatalogAgg;
 using TopTaz.Infrastrure;
 using TopTaz.Infrastrure.Seeds;
@@ -19,7 +20,8 @@ namespace TopTaz.Persistence.TTDbContext
         public DbSet<CatalogBrand>  CatalogBrands { get; set; }
         public DbSet<CatalogType> CatalogTypes { get; set; }
         public DbSet<CatalogItem> CatalogItems { get; set; }
-
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
         #endregion
 
 

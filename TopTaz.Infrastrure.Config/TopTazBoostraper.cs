@@ -7,6 +7,8 @@ using AutoMapper;
 using TopTaz.Infrastrure.AutoMapProfile;
 using TopTaz.Application.CatalogApplication.CatalogQuery;
 using TopTaz.Application.ContextACL;
+using TopTaz.Application.CatalogApplication.UriComposer;
+using TopTaz.Application.BasketApplication.BasketQuery;
 
 namespace TopTaz.Infrastrure.Config
 {
@@ -19,7 +21,9 @@ namespace TopTaz.Infrastrure.Config
 
             services.AddTransient<ICatalogTypeQuery, CatalogTypeQuery>();
             services.AddTransient<IDataBaseContext, TopTazDbContext>();
-
+            services.AddTransient<IUriComposerService,UriComposerService>();
+            services.AddTransient<ICatalogItemQuery, CatalogItemQuery>();
+            services.AddTransient<IBasketQuery, BasketQuery>();
             #region AutoMapperProfile
             services.AddAutoMapper(typeof(CatalogMapProfile));
             #endregion

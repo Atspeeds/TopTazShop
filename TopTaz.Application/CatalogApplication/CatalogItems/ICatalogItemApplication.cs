@@ -6,6 +6,9 @@ namespace TopTaz.Application.CatalogApplication.CatalogItems
     public interface ICatalogItemApplication
     {
         BaseDto<long> Create(CatalogItemDto command);
+        PaginatedItemDto<CatalogItemsListDto> Get(int page, int pageSize);
+
+
     }
-    
+
 }
