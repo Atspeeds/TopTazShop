@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ServiceHost.Models.ViewModel.AccountViewModel;
+using TopTaz.Application.BasketApplication.BasketQuery;
 using TopTaz.Domain.UserAgg;
 
 namespace ServiceHost.Controllers
@@ -9,12 +10,14 @@ namespace ServiceHost.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IBasketQuery _basketQuery;
 
         public AccountController(UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            SignInManager<User> signInManager,IBasketQuery basketQuery)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _basketQuery = basketQuery;
         }
 
 
@@ -45,6 +48,11 @@ namespace ServiceHost.Controllers
 
             if (resualt.Succeeded)
             {
+                var user = _userManager.FindByNameAsync(registerModel.Email).Result;
+
+                TransferBasketForuser(user.Id);
+                _signInManager.SignInAsync(user, true).Wait();
+
                 return RedirectToAction(nameof(Profile));
             }
 
@@ -90,6 +98,7 @@ namespace ServiceHost.Controllers
 
             if (resualt.Succeeded)
             {
+                TransferBasketForuser(userFind.Id);
                 return Redirect(loginViewModel.ReturnUrl);
             }
 
@@ -98,5 +107,15 @@ namespace ServiceHost.Controllers
         }
 
 
+        private void TransferBasketForuser(string userId)
+        {
+            string cookieName = "BasketId";
+            if (Request.Cookies.ContainsKey(cookieName))
+            {
+                var anonymousId = Request.Cookies[cookieName];
+                _basketQuery.TransferBasket(anonymousId, userId);
+                Response.Cookies.Delete(cookieName);
+            }
+        }
     }
 }

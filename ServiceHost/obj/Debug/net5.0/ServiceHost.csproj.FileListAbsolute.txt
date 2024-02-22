@@ -185,4 +185,6 @@ C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\System.Runtime.C
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\System.Text.Encodings.Web.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\bin\Debug\net5.0\System.Text.Json.dll
 C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
-C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Basket\Index.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Product\Detail.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Shared\Components\BasketComponent\BasketComponent.cshtml.g.cs

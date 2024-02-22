@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using TopTaz.Domain.BasketAgg;
+using TopTaz.Domain.CatalogAgg;
 
 namespace TopTaz.Infrastrure
 {
@@ -14,6 +16,7 @@ namespace TopTaz.Infrastrure
         {
             _context = context;
         }
+       
 
         public void TrackAndModifyEntities()
         {

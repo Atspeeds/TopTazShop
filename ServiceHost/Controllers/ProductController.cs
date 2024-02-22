@@ -17,7 +17,7 @@ namespace ServiceHost.Controllers
             var model=_catalogItemQuery.GetCatalogItems(page,pagesize);
             return View(model);
         }
-        public IActionResult Details(long id)
+        public IActionResult Detail(long id)
         {
            var model=_catalogItemQuery.GetDetail(id);
             return View(model);

@@ -2,12 +2,13 @@
 {
     public class BasketItemDto
     {
-        public int Id { get; set; }
-        public int CatalogItemid { get; set; }
+        public long Id { get; set; }
+        public long CatalogItemid { get; set; }
         public string CatalogName { get; set; }
         public int UnitPrice { get; set; }
         public int Quantity { get; set; }
         public string ImageUrl { get; set; }
+
     }
 
 }

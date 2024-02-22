@@ -29,6 +29,22 @@ namespace Persistence.Migrations
                     b.Property<string>("BuyerId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 2, 21, 22, 6, 4, 936, DateTimeKind.Local).AddTicks(239));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.ToTable("Baskets");
@@ -36,34 +52,44 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("TopTaz.Domain.BasketAgg.BasketItem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .UseIdentityColumn();
 
-                    b.Property<int>("BasketId")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("BasketId1")
+                    b.Property<long>("BasketId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("CatalogItemId")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("CatalogItemId1")
+                    b.Property<long>("CatalogItemId")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 2, 21, 22, 6, 4, 960, DateTimeKind.Local).AddTicks(3481));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("UnitPrice")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("BasketId1");
+                    b.HasIndex("BasketId");
 
-                    b.HasIndex("CatalogItemId1");
+                    b.HasIndex("CatalogItemId");
 
                     b.ToTable("BasketItems");
                 });
@@ -79,6 +105,22 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 2, 21, 22, 6, 4, 960, DateTimeKind.Local).AddTicks(8003));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -136,6 +178,16 @@ namespace Persistence.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 2, 21, 22, 6, 4, 961, DateTimeKind.Local).AddTicks(947));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<int>("MaxStockThreshold")
                         .HasColumnType("int");
 
@@ -145,8 +197,14 @@ namespace Persistence.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("RestockThreshold")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -170,8 +228,24 @@ namespace Persistence.Migrations
                     b.Property<string>("Group")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 2, 21, 22, 6, 4, 961, DateTimeKind.Local).AddTicks(6755));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Key")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -193,8 +267,24 @@ namespace Persistence.Migrations
                     b.Property<long>("CatalogItemId")
                         .HasColumnType("bigint");
 
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 2, 21, 22, 6, 4, 962, DateTimeKind.Local).AddTicks(637));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Src")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -210,13 +300,29 @@ namespace Persistence.Migrations
                         .HasColumnType("bigint")
                         .UseIdentityColumn();
 
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 2, 21, 22, 6, 4, 962, DateTimeKind.Local).AddTicks(6068));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<long?>("ParentCatalogTypeId")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -260,11 +366,15 @@ namespace Persistence.Migrations
                 {
                     b.HasOne("TopTaz.Domain.BasketAgg.Basket", null)
                         .WithMany("Items")
-                        .HasForeignKey("BasketId1");
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TopTaz.Domain.CatalogAgg.CatalogItem", "CatalogItem")
                         .WithMany()
-                        .HasForeignKey("CatalogItemId1");
+                        .HasForeignKey("CatalogItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CatalogItem");
                 });
