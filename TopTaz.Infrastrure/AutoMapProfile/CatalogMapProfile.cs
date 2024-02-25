@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using System.Linq;
-using TopTaz.Application.CatalogApplication.Proxy;
 using TopTaz.Application.CatalogApplication.Dtos;
 using TopTaz.Application.ViewModel;
 using TopTaz.Domain.CatalogAgg;

@@ -39,6 +39,7 @@ namespace ServiceHost.Controllers
 
             var users = new User()
             {
+                UserName= registerModel.Email,
                 FullName = registerModel.FullName,
                 Email = registerModel.Email,
                 PhoneNumber = registerModel.PhoneNumber,

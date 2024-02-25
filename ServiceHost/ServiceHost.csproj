@@ -17,4 +17,9 @@
     <ProjectReference Include="..\TopTaz.Infrastrure.Config\TopTaz.Infrastrure.Config.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Customers\Data\" />
+    <Folder Include="Areas\Customers\Models\" />
+  </ItemGroup>
+
 </Project>

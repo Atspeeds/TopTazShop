@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -8,7 +9,7 @@ using ServiceHost.Utility.Filters;
 using ServiceHost.Utility.Middleware;
 using System;
 using TopTaz.Application.ContextACL;
-using TopTaz.Application.VisitorApplication.Visitors;
+using TopTaz.Infrastrure.AutoMapProfile;
 using TopTaz.Infrastrure.Config;
 using TopTaz.Persistence.TTDbContext;
 
@@ -22,7 +23,7 @@ namespace ServiceHost
         }
 
         public IConfiguration Configuration { get; }
-        
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -37,8 +38,8 @@ namespace ServiceHost
             TopTazBoostraper.Configuration(services, ConnectionString);
             TopTazIdentityBootstraper.Configuration(services, ConnectionString);
             services.AddTransient(typeof(IMongoServiceConnection<>), typeof(TopTazMongoDbContext<>));
-            
-           
+
+            services.AddAutoMapper(typeof(UserMapProfile));
 
             services.AddAuthorization();
 
@@ -70,12 +71,18 @@ namespace ServiceHost
             app.UseVisitorsIdRegistration();
             app.UseRouting();
 
-           
+
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+
+                endpoints.MapControllerRoute(
+                   name: "areas",
+                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                  );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

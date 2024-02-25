@@ -1,22 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using TopTaz.Application.BasketApplication.Dto;
-using TopTaz.Application.CatalogApplication.UriComposer;
 using TopTaz.Application.ContextACL;
 using TopTaz.Domain.BasketAgg;
+using TT.FrameWork.Application.Proxy;
 
 namespace TopTaz.Application.BasketApplication.BasketQuery
 {
     public class BasketQuery : IBasketQuery
     {
         private readonly IDataBaseContext context;
-        private readonly IUriComposerService uriComposerService;
+        UriComposerServiceProxy uriComposerService = new UriComposerServiceProxy();
 
-        public BasketQuery(IDataBaseContext context
-            , IUriComposerService uriComposerService)
+
+        public BasketQuery(IDataBaseContext context)
         {
             this.context = context;
-            this.uriComposerService = uriComposerService;
         }
 
         public void AddItemToBasket(long baketId, long catalogItemid, int quantity = 1)
@@ -52,7 +51,7 @@ namespace TopTaz.Application.BasketApplication.BasketQuery
                 CatalogName = item.CatalogItem.Name,
                 Quantity = item.Quantity,
                 UnitPrice = item.UnitPrice,
-                ImageUrl = uriComposerService.ComposeImageUri(item?.CatalogItem?
+                ImageUrl = uriComposerService.GetComposeImageUri(item?.CatalogItem?
                       .CatalogItemImages?.FirstOrDefault()?.Src ?? ""),
 
             }).ToList();
@@ -113,7 +112,7 @@ namespace TopTaz.Application.BasketApplication.BasketQuery
                     CatalogName = item.CatalogItem.Name,
                     Quantity = item.Quantity,
                     UnitPrice = item.UnitPrice,
-                    ImageUrl = uriComposerService.ComposeImageUri(item?.CatalogItem?
+                    ImageUrl = uriComposerService.GetComposeImageUri(item?.CatalogItem?
                      .CatalogItemImages?.FirstOrDefault()?.Src ?? ""),
 
                 }).ToList(),
@@ -141,5 +140,6 @@ namespace TopTaz.Application.BasketApplication.BasketQuery
 
             context.SaveChanges();
         }
+
     }
 }

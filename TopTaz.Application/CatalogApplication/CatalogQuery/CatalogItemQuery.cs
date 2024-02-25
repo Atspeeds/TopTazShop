@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using TopTaz.Application.CatalogApplication.Dtos;
-using TopTaz.Application.CatalogApplication.Proxy;
 using TopTaz.Application.ContextACL;
 using TopTaz.Application.DtoModel;
 using TopTaz.Application.ViewModel;
 using TT.FrameWork.Application;
+using TT.FrameWork.Application.Proxy;
 
 namespace TopTaz.Application.CatalogApplication.CatalogQuery
 {

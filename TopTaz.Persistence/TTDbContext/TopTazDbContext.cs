@@ -5,6 +5,8 @@ using TopTaz.Application.ContextACL;
 using TopTaz.Domain.BasketAgg;
 using TopTaz.Domain.CatalogAgg;
 using TopTaz.Domain.FrameWorkDomain;
+using TopTaz.Domain.OrderAgg;
+using TopTaz.Domain.UserAgg;
 using TopTaz.Infrastrure;
 using TopTaz.Infrastrure.Seeds;
 using TopTaz.Persistence.Mapping.CatalogMap;
@@ -25,6 +27,9 @@ namespace TopTaz.Persistence.TTDbContext
         public DbSet<CatalogItem> CatalogItems { get; set; }
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<UserAddress> UserAddresses { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         #endregion
 
 
@@ -47,6 +52,8 @@ namespace TopTaz.Persistence.TTDbContext
                 .HasQueryFilter(m => EF.Property<bool>(m, "IsRemoved") == false);
             modelBuilder.Entity<Basket>()
                 .HasQueryFilter(m => EF.Property<bool>(m, "IsRemoved") == false);
+
+            modelBuilder.Entity<Order>().OwnsOne(x => x.Address);
 
             var assamble = typeof(CatalogBrandMapping).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assamble);
