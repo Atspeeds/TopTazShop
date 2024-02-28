@@ -140,7 +140,7 @@
 
     <script src="~/lib/select2/js/select2.js"></script>
     <script>
-        $("#model_appliedToCatalogItem").select2({
+        $("#NewDiscountDto_AppliedToCatalogItem").select2({
             placeholder: "محصول را جستجو وانتخاب کنید",
             allowClear: true,
             multiple: true,
@@ -148,7 +148,7 @@
             tokenSeparators: [',', ' '],
             theme: "bootstrap4",
             ajax: {
-                url: "/api/DiscountApi/SearchCatalogItem",
+                url: "/api/DiscountApi/GetCatalogItem",
                 contentType: "application/json; charset=utf-8",
                 data: function (params) {
                     var query =

@@ -26,6 +26,7 @@ namespace AdminServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllers();
 
             string ConnectionString = Configuration.GetConnectionString("SqlServer");
 
@@ -63,6 +64,7 @@ namespace AdminServiceHost
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
