@@ -8,6 +8,7 @@ using System.Linq;
 using TopTaz.Application.BasketApplication.BasketQuery;
 using TopTaz.Application.BasketApplication.Dto;
 using TopTaz.Application.OrderApplication;
+using TopTaz.Application.PaymentsApplication;
 using TopTaz.Application.UsersApplication;
 using TopTaz.Domain.OrderAgg;
 using TopTaz.Domain.UserAgg;
@@ -22,16 +23,19 @@ namespace ServiceHost.Controllers
         private readonly IBasketQuery _basketQuery;
         private readonly IUserAddressApplication _userAddressApplication;
         private readonly IOrderApplication _orderApplication;
+        private readonly IPaymentApplication _paymentApplication;
         private string UserId = null;
         public BasketController(SignInManager<User> signInManager,
             IBasketQuery basketQuery,
             IUserAddressApplication userAddressApplication,
-            IOrderApplication orderApplication)
+            IOrderApplication orderApplication,
+            IPaymentApplication paymentApplication)
         {
             _signInManager = signInManager;
             _basketQuery = basketQuery;
             _userAddressApplication = userAddressApplication;
             _orderApplication = orderApplication;
+            _paymentApplication = paymentApplication;
         }
 
         [AllowAnonymous]
@@ -85,15 +89,16 @@ namespace ServiceHost.Controllers
             if (PaymentMethod == PaymentMethod.OnlinePaymnt)
             {
                 //ثبت پرداخت
-                //var payment = paymentService.PayForOrder(orderId);
+                var payment = _paymentApplication.PayForOrder(orderId);
                 //ارسال به درگاه پرداخت
-                //return RedirectToAction("Index", "Pay", new { PaymentId = payment.PaymentId });
+                return RedirectToAction("Index", "Pay", new { PaymentId = payment.Id });
             }
             else
             {
                 //برو به صفحه سفارشات من
                 return RedirectToAction("Index", "Orders", new { area = "customers" });
             }
+           
         }
 
 

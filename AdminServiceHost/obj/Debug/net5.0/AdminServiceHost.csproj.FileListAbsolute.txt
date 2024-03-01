@@ -112,3 +112,5 @@ C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\System.Text
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogItem\Create.cshtml.g.cs
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\Catalogs\CatalogItem\Index.cshtml.g.cs
 C:\Users\A\source\repos\TopTazShop\AdminServiceHost\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\DisCounts\Create.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\AdminServiceHost\obj\Debug\net5.0\Razor\Pages\DisCounts\Index.cshtml.g.cs

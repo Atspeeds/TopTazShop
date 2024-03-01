@@ -4,8 +4,10 @@ using System.Linq;
 using TopTaz.Application.ContextACL;
 using TopTaz.Domain.BasketAgg;
 using TopTaz.Domain.CatalogAgg;
+using TopTaz.Domain.DiscountAgg;
 using TopTaz.Domain.FrameWorkDomain;
 using TopTaz.Domain.OrderAgg;
+using TopTaz.Domain.PaymentAgg;
 using TopTaz.Domain.UserAgg;
 using TopTaz.Infrastrure;
 using TopTaz.Infrastrure.Seeds;
@@ -30,6 +32,8 @@ namespace TopTaz.Persistence.TTDbContext
         public DbSet<UserAddress> UserAddresses { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
         #endregion
 
 

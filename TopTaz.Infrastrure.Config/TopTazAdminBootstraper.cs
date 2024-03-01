@@ -4,6 +4,7 @@ using TopTaz.Application.CatalogApplication.CatalogItems;
 using TopTaz.Application.CatalogApplication.CatalogQuery;
 using TopTaz.Application.CatalogApplication.CatalogTypes;
 using TopTaz.Application.ContextACL;
+using TopTaz.Application.DiscountApplication;
 using TopTaz.Application.ReportsService.VisitorReports;
 using TopTaz.Infrastrure.ExternalApi.ImageServer;
 using TopTaz.Persistence.TTDbContext;
@@ -18,8 +19,9 @@ namespace TopTaz.Infrastrure.Config
             services.AddTransient<IVisitorReport, VisitorReport>();
             services.AddTransient(typeof(IMongoServiceConnection<>), typeof(TopTazMongoDbContext<>));
             services.AddTransient<ICatalogTypeApplication, CatalogTypeApplication>();
-            services.AddTransient<IDataBaseContext,TopTazDbContext>();
-            services.AddTransient<ICatalogItemApplication,CatalogItemApplication>();
+            services.AddTransient<IDataBaseContext, TopTazDbContext>();
+            services.AddTransient<ICatalogItemApplication, CatalogItemApplication>();
+            services.AddTransient<IDiscountApplication, DiscountApplication>();
 
             services.AddTransient<ICatalogTypeQuery, CatalogTypeQuery>();
             services.AddTransient<ICatalogItemQuery, CatalogItemQuery>();
@@ -30,7 +32,7 @@ namespace TopTaz.Infrastrure.Config
                 options.UseSqlServer(connectionString);
             });
 
-            
+
         }
 
     }

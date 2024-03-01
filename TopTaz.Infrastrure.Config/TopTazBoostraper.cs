@@ -9,8 +9,8 @@ using TopTaz.Application.CatalogApplication.CatalogQuery;
 using TopTaz.Application.ContextACL;
 using TopTaz.Application.BasketApplication.BasketQuery;
 using TopTaz.Application.UsersApplication;
-using TT.FrameWork.Application.UriComposer;
 using TopTaz.Application.OrderApplication;
+using TopTaz.Application.PaymentsApplication;
 
 namespace TopTaz.Infrastrure.Config
 {
@@ -22,6 +22,7 @@ namespace TopTaz.Infrastrure.Config
             services.AddTransient<IVisitorApplication, VisitorApplication>();
             services.AddTransient<IUserAddressApplication, UserAddressApplication>();
             services.AddTransient<IOrderApplication, OrderApplication>();
+            services.AddTransient<IPaymentApplication, PaymentApplication>();
 
 
             //===========================================================

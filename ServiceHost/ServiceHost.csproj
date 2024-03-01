@@ -22,4 +22,13 @@
     <Folder Include="Areas\Customers\Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Dto">
+      <HintPath>..\..\..\..\Desktop\Dto.dll</HintPath>
+    </Reference>
+    <Reference Include="ZarinPal">
+      <HintPath>..\..\..\..\Desktop\ZarinPal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TopTaz.Domain.DiscountAgg;
 using TopTaz.Domain.FrameWorkDomain;
 
 namespace TopTaz.Domain.CatalogAgg
@@ -23,6 +24,7 @@ namespace TopTaz.Domain.CatalogAgg
 
         public ICollection<CatalogItemFeature> catalogItemFeatures { get; set; }
         public ICollection<CatalogItemImage> CatalogItemImages { get; set; }
+        public ICollection<Discount> Discounts { get; set; }
 
     }
 }

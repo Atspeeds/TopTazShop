@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TT.FrameWork", "TT.FrameWor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminServiceHost", "AdminServiceHost\AdminServiceHost.csproj", "{E5140F40-AF7B-4FE5-B02F-11BCF660D333}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFile.EndPoint", "StaticFile.EndPoint\StaticFile.EndPoint.csproj", "{DD981060-9D5C-4D2E-9ADB-621ACBDDE145}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StaticFile.EndPoint", "StaticFile.EndPoint\StaticFile.EndPoint.csproj", "{DD981060-9D5C-4D2E-9ADB-621ACBDDE145}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -16,6 +16,7 @@ namespace TopTaz.Domain.OrderAgg
         public PaymentMethod PaymentMethod { get; private set; }
         public PaymentStatus PaymentStatus { get; private set; }
         public OrderStatus OrderStatus { get; private set; }
+
         private readonly List<OrderItem> _orderItems = new List<OrderItem>();
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems.AsReadOnly();
 

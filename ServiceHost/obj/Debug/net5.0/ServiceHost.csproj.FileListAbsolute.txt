@@ -193,3 +193,4 @@ C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Cust
 C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Customers\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Customers\Views\_ViewImports.cshtml.g.cs
 C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Shared\_LayoutCustomerPanel.cshtml.g.cs
+C:\Users\A\source\repos\TopTazShop\ServiceHost\obj\Debug\net5.0\Razor\Views\Basket\ShippingPayment.cshtml.g.cs
