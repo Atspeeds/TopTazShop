@@ -106,6 +106,19 @@
           }
         }
       },
+      "MD.PersianDateTime.Standard/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MD.PersianDateTime.Standard.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MD.PersianDateTime.Standard.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2648,6 +2661,20 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "MD.PersianDateTime.Standard/2.5.0": {
+      "sha512": "xEhLsSr4reHEv5AC3fIgdJbAJBXxsX9YMvQAZeR8lMmzXZZiob1Bd4K2YKkjKgPYX5agOkJV/B+lwp0pPiDYPA==",
+      "type": "package",
+      "path": "md.persiandatetime.standard/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PersianDateTimePng.png",
+        "lib/netstandard2.0/MD.PersianDateTime.Standard.dll",
+        "lib/netstandard2.0/MD.PersianDateTime.Standard.xml",
+        "md.persiandatetime.standard.2.5.0.nupkg.sha512",
+        "md.persiandatetime.standard.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -7451,6 +7478,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MD.PersianDateTime.Standard >= 2.5.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
       "TopTaz.Application >= 1.0.0",
       "TopTaz.Infrastrure.Config >= 1.0.0",
@@ -7506,6 +7534,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "MD.PersianDateTime.Standard": {
+            "target": "Package",
+            "version": "[2.5.0, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",

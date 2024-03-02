@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "soMXtKU/8wy8ZTF0Gl0L1H0U3kTTYxb1UYNxTzZjr9rkGYDoG3V/ey3Ee5szHyFCvWV5NFvBZuW9UoZKWiQHew==",
+  "dgSpecHash": "DJbvu9l83H6gRfFqV85mwPlmWh7jDjhCjPhQ+SlMXMIF09i8kAwYF6abD1fqxPyMDIKine1HolBCDRw6gUzEWA==",
   "success": true,
   "projectFilePath": "C:\\Users\\A\\source\\repos\\TopTazShop\\AdminServiceHost\\AdminServiceHost.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\A\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\A\\.nuget\\packages\\md.persiandatetime.standard\\2.5.0\\md.persiandatetime.standard.2.5.0.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\A\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

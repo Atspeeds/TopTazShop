@@ -15,7 +15,8 @@ namespace AdminServiceHost.Pages.DisCounts
         }
 
 
-        public AddNewDiscountDto NewDiscountDto;
+        [BindProperty]
+        public AddNewDiscountDto NewDiscountDto { get; set; }
 
         public void OnGet()
         {
