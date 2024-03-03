@@ -34,6 +34,7 @@ namespace TopTaz.Persistence.TTDbContext
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Discount> Discounts { get; set; }
+        public DbSet<DiscountUsageHistory> DiscountUsageHistories { get; set; }
         #endregion
 
 

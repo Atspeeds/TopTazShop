@@ -23,6 +23,7 @@ namespace TopTaz.Infrastrure.Config
             services.AddTransient<ICatalogItemApplication, CatalogItemApplication>();
             services.AddTransient<IDiscountApplication, DiscountApplication>();
 
+
             services.AddTransient<ICatalogTypeQuery, CatalogTypeQuery>();
             services.AddTransient<ICatalogItemQuery, CatalogItemQuery>();
 

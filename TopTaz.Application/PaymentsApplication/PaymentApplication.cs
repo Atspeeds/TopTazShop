@@ -24,6 +24,7 @@ namespace TopTaz.Application.PaymentsApplication
         {
             var order = _context.Orders
                    .Include(p => p.OrderItems)
+                   .Include(x=>x.AppliedDiscount)
                    .SingleOrDefault(p => p.Id == orderId);
             if (order == null)
                 throw new Exception("");
@@ -47,8 +48,11 @@ namespace TopTaz.Application.PaymentsApplication
         public PaymentDto GetPayment(Guid Id)
         {
             var payment = _context.Payments
+                  
                  .Include(p => p.Order)
                  .ThenInclude(p => p.OrderItems)
+                 .Include(x => x.Order)
+                 .ThenInclude(x=>x.AppliedDiscount)
                  .SingleOrDefault(p => p.Id == Id);
 
             var user = _identityContext.Users.SingleOrDefault(p => p.Id == payment.Order.UserId);

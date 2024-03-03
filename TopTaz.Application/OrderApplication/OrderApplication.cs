@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using TopTaz.Application.ContextACL;
+using TopTaz.Application.DiscountApplication;
 using TopTaz.Domain.OrderAgg;
 using TT.FrameWork.Application.Proxy;
 
@@ -11,19 +12,23 @@ namespace TopTaz.Application.OrderApplication
     public class OrderApplication : IOrderApplication
     {
         private readonly IDataBaseContext _context;
+        private readonly IDiscountApplication _discountContext;
         private readonly IMapper _mapper;
         UriComposerServiceProxy uriComposerService = new UriComposerServiceProxy();
 
-        public OrderApplication(IDataBaseContext context, IMapper mapper)
+        public OrderApplication(IDataBaseContext context, IMapper mapper,
+            IDiscountApplication discountApplication)
         {
             _context = context;
             _mapper = mapper;
+            _discountContext = discountApplication;
         }
 
         public long CreateOrder(long BasketId, long UserAddressId, PaymentMethod paymentMethod)
         {
             var basket = _context.Baskets
                          .Include(p => p.Items)
+                         .Include(d=>d.AppliedDiscount)
                          .SingleOrDefault(p => p.Id == BasketId);
 
             long[] Ids = basket.Items.Select(x => x.CatalogItemId).ToArray();
@@ -50,10 +55,15 @@ namespace TopTaz.Application.OrderApplication
 
             var userAddress = _context.UserAddresses.SingleOrDefault(p => p.Id == UserAddressId);
             var address = _mapper.Map<Address>(userAddress);
-            var order = new Order(basket.BuyerId, address, orderItems, paymentMethod);
+            var order = new Order(basket.BuyerId, address, orderItems, paymentMethod,basket.AppliedDiscount);
             _context.Orders.Add(order);
             _context.Baskets.Remove(basket);
             _context.SaveChanges();
+            if(basket.AppliedDiscount is not null)
+            {
+                _discountContext.InsertDiscountUsageHistory(basket.Id, order.Id);
+            }
+
             return order.Id;
 
         }

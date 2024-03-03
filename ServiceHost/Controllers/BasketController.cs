@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ServiceHost.Models.ViewModel.Baskets;
 using System;
 using System.Linq;
 using TopTaz.Application.BasketApplication.BasketQuery;
 using TopTaz.Application.BasketApplication.Dto;
+using TopTaz.Application.DiscountApplication;
 using TopTaz.Application.OrderApplication;
 using TopTaz.Application.PaymentsApplication;
 using TopTaz.Application.UsersApplication;
@@ -24,18 +26,22 @@ namespace ServiceHost.Controllers
         private readonly IUserAddressApplication _userAddressApplication;
         private readonly IOrderApplication _orderApplication;
         private readonly IPaymentApplication _paymentApplication;
+        private readonly IDiscountApplication _discountApplication;
+
         private string UserId = null;
         public BasketController(SignInManager<User> signInManager,
             IBasketQuery basketQuery,
             IUserAddressApplication userAddressApplication,
             IOrderApplication orderApplication,
-            IPaymentApplication paymentApplication)
+            IPaymentApplication paymentApplication,
+            IDiscountApplication discountApplication)
         {
             _signInManager = signInManager;
             _basketQuery = basketQuery;
             _userAddressApplication = userAddressApplication;
             _orderApplication = orderApplication;
             _paymentApplication = paymentApplication;
+            _discountApplication = discountApplication;
         }
 
         [AllowAnonymous]
@@ -99,6 +105,20 @@ namespace ServiceHost.Controllers
                 return RedirectToAction("Index", "Orders", new { area = "customers" });
             }
            
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult ApplyDiscount(string CouponCode,int BasketId)
+        {
+            _discountApplication.ApplyDiscountInBasket(CouponCode, BasketId);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult RemoveDiscount(int id)
+        {
+            _discountApplication.RemoveDiscountFromBasket(id);
+            return RedirectToAction(nameof(Index));
         }
 
 

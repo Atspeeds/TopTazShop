@@ -48,6 +48,7 @@ namespace TopTaz.Application.BasketApplication.BasketQuery
             {
                 CatalogItemid = item.CatalogItemId,
                 Id = item.Id,
+                DiscountAmount=basket.DiscountAmount,
                 CatalogName = item.CatalogItem.Name,
                 Quantity = item.Quantity,
                 UnitPrice = item.UnitPrice,
@@ -105,6 +106,7 @@ namespace TopTaz.Application.BasketApplication.BasketQuery
             {
                 Id = basket.Id,
                 BuyerId = basket.BuyerId,
+                DiscountAmount=basket.DiscountAmount,
                 Items = basket.Items.Select(item => new BasketItemDto
                 {
                     CatalogItemid = item.CatalogItemId,
@@ -122,6 +124,7 @@ namespace TopTaz.Application.BasketApplication.BasketQuery
         public void TransferBasket(string anonymousId, string UserId)
         {
             var anonymousBasket = context.Baskets
+                .Include(x=>x.AppliedDiscount)
                  .SingleOrDefault(p => p.BuyerId == anonymousId);
             if (anonymousBasket == null) return;
             var userBasket = context.Baskets.SingleOrDefault(p => p.BuyerId == UserId);
@@ -134,6 +137,11 @@ namespace TopTaz.Application.BasketApplication.BasketQuery
             foreach (var item in anonymousBasket.Items)
             {
                 userBasket.AddItem(item.CatalogItemId, item.Quantity, item.UnitPrice);
+            }
+
+            if (anonymousBasket.AppliedDiscount != null) 
+            {
+                userBasket.ApplyDiscountCode(anonymousBasket.AppliedDiscount);
             }
 
             context.Baskets.Remove(anonymousBasket);

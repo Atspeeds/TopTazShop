@@ -41,13 +41,19 @@ namespace TopTaz.Persistence.Migrations
                         .HasColumnType("bigint")
                         .UseIdentityColumn();
 
+                    b.Property<long?>("AppliedDiscountId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("BuyerId")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DiscountAmount")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 538, DateTimeKind.Local).AddTicks(1581));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 77, DateTimeKind.Local).AddTicks(9572));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -61,6 +67,8 @@ namespace TopTaz.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppliedDiscountId");
 
                     b.ToTable("Baskets");
                 });
@@ -81,7 +89,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 546, DateTimeKind.Local).AddTicks(2436));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 91, DateTimeKind.Local).AddTicks(6817));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -124,7 +132,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 546, DateTimeKind.Local).AddTicks(5066));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 92, DateTimeKind.Local).AddTicks(1715));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -196,7 +204,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 546, DateTimeKind.Local).AddTicks(7812));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 92, DateTimeKind.Local).AddTicks(5730));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -246,7 +254,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 547, DateTimeKind.Local).AddTicks(1636));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 93, DateTimeKind.Local).AddTicks(26));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -285,7 +293,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 547, DateTimeKind.Local).AddTicks(3889));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 93, DateTimeKind.Local).AddTicks(3474));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -318,7 +326,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 547, DateTimeKind.Local).AddTicks(6534));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 93, DateTimeKind.Local).AddTicks(6700));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -405,7 +413,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 547, DateTimeKind.Local).AddTicks(9464));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 94, DateTimeKind.Local).AddTicks(1020));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -445,10 +453,16 @@ namespace TopTaz.Persistence.Migrations
                         .HasColumnType("bigint")
                         .UseIdentityColumn();
 
+                    b.Property<long?>("AppliedDiscountId")
+                        .HasColumnType("bigint");
+
+                    b.Property<decimal>("DiscountAmount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 548, DateTimeKind.Local).AddTicks(2295));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 94, DateTimeKind.Local).AddTicks(8403));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -478,6 +492,8 @@ namespace TopTaz.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AppliedDiscountId");
+
                     b.ToTable("Orders");
                 });
 
@@ -494,7 +510,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 548, DateTimeKind.Local).AddTicks(5782));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 95, DateTimeKind.Local).AddTicks(5387));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -547,7 +563,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 548, DateTimeKind.Local).AddTicks(8383));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 95, DateTimeKind.Local).AddTicks(9292));
 
                     b.Property<bool>("IsPay")
                         .HasColumnType("bit");
@@ -589,7 +605,7 @@ namespace TopTaz.Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 1, 17, 20, 42, 549, DateTimeKind.Local).AddTicks(807));
+                        .HasDefaultValue(new DateTime(2024, 3, 2, 18, 29, 6, 96, DateTimeKind.Local).AddTicks(3432));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -635,6 +651,15 @@ namespace TopTaz.Persistence.Migrations
                         .HasForeignKey("DiscountsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("TopTaz.Domain.BasketAgg.Basket", b =>
+                {
+                    b.HasOne("TopTaz.Domain.DiscountAgg.Discount", "AppliedDiscount")
+                        .WithMany()
+                        .HasForeignKey("AppliedDiscountId");
+
+                    b.Navigation("AppliedDiscount");
                 });
 
             modelBuilder.Entity("TopTaz.Domain.BasketAgg.BasketItem", b =>
@@ -706,6 +731,10 @@ namespace TopTaz.Persistence.Migrations
 
             modelBuilder.Entity("TopTaz.Domain.OrderAgg.Order", b =>
                 {
+                    b.HasOne("TopTaz.Domain.DiscountAgg.Discount", "AppliedDiscount")
+                        .WithMany()
+                        .HasForeignKey("AppliedDiscountId");
+
                     b.OwnsOne("TopTaz.Domain.OrderAgg.Address", "Address", b1 =>
                         {
                             b1.Property<long>("OrderId")
@@ -737,6 +766,8 @@ namespace TopTaz.Persistence.Migrations
                         });
 
                     b.Navigation("Address");
+
+                    b.Navigation("AppliedDiscount");
                 });
 
             modelBuilder.Entity("TopTaz.Domain.OrderAgg.OrderItem", b =>

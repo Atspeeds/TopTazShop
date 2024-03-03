@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TopTaz.Domain.DiscountAgg;
 using TopTaz.Domain.FrameWorkDomain;
 
 namespace TopTaz.Domain.OrderAgg
@@ -13,19 +14,28 @@ namespace TopTaz.Domain.OrderAgg
         public DateTime OrderDate { get; private set; } = DateTime.Now;
         public Address Address { get; private set; }
 
+        public decimal DiscountAmount { get; private set; }
+        public Discount AppliedDiscount { get; private set; }
+        public long? AppliedDiscountId { get; private set; }
+
         public PaymentMethod PaymentMethod { get; private set; }
         public PaymentStatus PaymentStatus { get; private set; }
         public OrderStatus OrderStatus { get; private set; }
 
+
         private readonly List<OrderItem> _orderItems = new List<OrderItem>();
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems.AsReadOnly();
 
-        public Order(string userId, Address address, List<OrderItem> orderItems, PaymentMethod paymentMethod)
+        public Order(string userId, Address address, List<OrderItem> orderItems, PaymentMethod paymentMethod, Discount discount)
         {
             UserId = userId;
             Address = address;
             _orderItems = orderItems;
             PaymentMethod = paymentMethod;
+            if (discount != null)
+            {
+                ApplyDiscountCode(discount);
+            }
         }
 
         public Order()
@@ -69,9 +79,29 @@ namespace TopTaz.Domain.OrderAgg
             OrderStatus = OrderStatus.Cancelled;
         }
 
+
         public int TotalPrice()
         {
-            return _orderItems.Sum(p => p.UnitPrice * p.Units);
+            int totalPrice = _orderItems.Sum(p => p.UnitPrice * p.Units);
+            totalPrice -= AppliedDiscount.GetDiscountAmount(totalPrice);
+            return totalPrice;
+        }
+
+        /// <summary>
+        /// دریافت مبلغ کل بدونه در نظر گرفتن کد تخفیف
+        /// </summary>
+        /// <returns></returns>
+        public int TotalPriceWithOutDiescount()
+        {
+            int totalPrice = _orderItems.Sum(p => p.UnitPrice * p.Units);
+            return totalPrice;
+        }
+
+        public void ApplyDiscountCode(Discount discount)
+        {
+            this.AppliedDiscount = discount;
+            this.AppliedDiscountId = discount.Id;
+            this.DiscountAmount = discount.GetDiscountAmount(TotalPrice());
         }
 
     }
