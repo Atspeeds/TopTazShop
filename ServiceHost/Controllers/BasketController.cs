@@ -14,6 +14,7 @@ using TopTaz.Application.PaymentsApplication;
 using TopTaz.Application.UsersApplication;
 using TopTaz.Domain.OrderAgg;
 using TopTaz.Domain.UserAgg;
+using TT.FrameWork.Messages;
 using TT.FrameWork.Presentations;
 
 namespace ServiceHost.Controllers
@@ -27,14 +28,15 @@ namespace ServiceHost.Controllers
         private readonly IOrderApplication _orderApplication;
         private readonly IPaymentApplication _paymentApplication;
         private readonly IDiscountApplication _discountApplication;
-
+        private readonly UserManager<User> userManager;
         private string UserId = null;
         public BasketController(SignInManager<User> signInManager,
             IBasketQuery basketQuery,
             IUserAddressApplication userAddressApplication,
             IOrderApplication orderApplication,
             IPaymentApplication paymentApplication,
-            IDiscountApplication discountApplication)
+            IDiscountApplication discountApplication,
+            UserManager<User> userManager)
         {
             _signInManager = signInManager;
             _basketQuery = basketQuery;
@@ -42,6 +44,7 @@ namespace ServiceHost.Controllers
             _orderApplication = orderApplication;
             _paymentApplication = paymentApplication;
             _discountApplication = discountApplication;
+            this.userManager = userManager;
         }
 
         [AllowAnonymous]
@@ -111,12 +114,24 @@ namespace ServiceHost.Controllers
         [HttpPost]
         public IActionResult ApplyDiscount(string CouponCode,int BasketId)
         {
-            _discountApplication.ApplyDiscountInBasket(CouponCode, BasketId);
+            var user = userManager.GetUserAsync(User).Result;
+            var valisDiscount = _discountApplication.IsDiscountValid(CouponCode, user);
+            if(valisDiscount.ISsuccess)
+            {
+                _discountApplication.ApplyDiscountInBasket(CouponCode, BasketId);
+            }
+            else
+            {
+                TempData["InvalidMessage"] = String.Join(Environment.NewLine, valisDiscount.Messages.Select(a => String.Join(", ", a)));
+
+            }
+
             return RedirectToAction(nameof(Index));
         }
 
         public IActionResult RemoveDiscount(int id)
         {
+
             _discountApplication.RemoveDiscountFromBasket(id);
             return RedirectToAction(nameof(Index));
         }

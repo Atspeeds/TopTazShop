@@ -17,6 +17,7 @@ namespace TopTaz.Application.DiscountApplication
         DiscountUsageHistory GetDiscountUsageHistoryById(long discountUsageHistoryId);
         PaginatedItemDto<DiscountUsageHistory> GetAllDiscountUsageHistory(long? discountId,
        string? userId, int pageIndex, int pageSize);
+
     }
     
 }
